@@ -76,6 +76,10 @@
         remonCall.close();
         if($('#localVideo')[0].srcObject){ $('#localVideo')[0].srcObject=undefined; }
         remonCall = new Remon({config: config, listener: listener});
+      },
+      onStat(result){
+        const stat = `l.rate: ${result.localFrameRate} /r.rate: ${result.remoteFrameRate}`
+        console.log(stat)
       }
     }
 
